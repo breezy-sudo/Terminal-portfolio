@@ -4,39 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev_Terminal_v1/breezySudo</title>
+    <title>breezyOS_v1/breezySudo</title>
     <link rel="stylesheet" href="app.css">
 </head>
 
-<body>
+<body data-palette="green" data-time="night">
 
-    <main id="terminal-container">
+    <div id="boot" role="button" tabindex="0" aria-label="Skip boot sequence">
+        <div id="boot-lines"></div>
+        <div id="boot-skip">press any key or tap to skip</div>
+    </div>
 
-        <header id="terminal-header">
-            <div class="terminal-buttons">
-                <span class="button-close">&#9679;</span>
-                <span class="button-minimize">&#9679;</span>
-                <span class="button-maximize">&#9679;</span>
+    <header id="menubar">
+        <span class="brand">breezyOS v1.0.0</span>
+        <div class="tools">
+            <span id="clock">--:--</span>
+        </div>
+    </header>
+
+    <main id="desktop">
+        <section id="welcome">
+            <p class="hello" id="hello">hello.</p>
+            <div class="id-card">
+                <div class="avatar"><img src="profile.jpg" alt="Profile photo of breezysudo"></div>
+                <div class="id-info">
+                    <p>alias: breezysudo</p>
+                    <p>status: building</p>
+                    <p>uptime: <span id="uptime">0m 0s</span></p>
+                </div>
             </div>
-
-
-            <h1 id="terminal-title">Dev_Terminal_v1 </h1>
-        </header>
-
-        <section id="terminal-body">
-            <p id="boot-text">Visitor@portfolio:~$ help</p>
-
-            <p id="input-line">
-                <span class="prompt">>></span>
-                <input type="text" id="command-input" autofocus autocomplete="off" spellcheck="false" />
-            <div id="output"></div>
-            </p>
-
+            <p>Open anything from the dock below. Or type <b>help</b> in the terminal.</p>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <nav id="dock" aria-label="Applications"></nav>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
